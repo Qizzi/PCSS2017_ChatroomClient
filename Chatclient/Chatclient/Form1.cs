@@ -12,13 +12,13 @@ using System.Windows.Forms;
 
 namespace Chatclient
 {
-    public partial class Form1 : Form
+    public partial class connectWin : Form
     {
 
         Controller controller;
         String username;
 
-        public Form1(Controller con)
+        public connectWin(Controller con)
         {
             controller = con;
             InitializeComponent();
@@ -31,7 +31,7 @@ namespace Chatclient
 
         private void textBox1_TextChanged(object sender, EventArgs e)
         {
-            username = textBox1.Text;
+            username = nameBox.Text;
         }
 
         private void button1_Click(object sender, EventArgs e)

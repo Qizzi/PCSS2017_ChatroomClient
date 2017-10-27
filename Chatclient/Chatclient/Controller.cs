@@ -17,11 +17,11 @@ namespace Chatclient
         private StreamWriter sWriter;
 
         private Boolean isConnected;
-        private Form1 form;
+        private connectWin form;
 
         public Controller()
         {
-            form = new Form1(this);
+            form = new connectWin(this);
             Application.Run(form);
             
         }
