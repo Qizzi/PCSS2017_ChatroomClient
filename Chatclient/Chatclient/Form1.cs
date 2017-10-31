@@ -37,6 +37,8 @@ namespace Chatclient
         private void button1_Click(object sender, EventArgs e)
         {
             controller.login();
+            //controller.createLobThread();
+            this.Hide();
         }
 
         public string getUserName()

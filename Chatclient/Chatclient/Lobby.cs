@@ -12,8 +12,11 @@ namespace Chatclient
 {
     public partial class Lobby : Form
     {
-        public Lobby()
+        Controller controller;
+
+        public Lobby(Controller con)
         {
+            controller = con;
             InitializeComponent();
         }
 
