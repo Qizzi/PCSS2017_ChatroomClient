@@ -22,16 +22,12 @@ namespace Chatclient
 
         private connectWin form;
         private Lobby lobby;
+        private NewRoom newroom;
+
         public Controller()
         {
             var loginScreen = new Thread(loginInit);
             loginScreen.Start();
-        }
-
-        private void loginInit()
-        {
-            form = new connectWin(this);
-            Application.Run(form);
         }
 
         /*public void createLobThread()
@@ -54,13 +50,30 @@ namespace Chatclient
             lobbyThread.Start();
         }*/
 
+        private void loginInit()
+        {
+            form = new connectWin(this);
+            Application.Run(form);
+        }
+
         public void showLobby()
         {
             lobby = new Lobby(this);
             Application.Run(lobby);
         }
 
+        public void showNewRoomForm()
+        {
+            newroom = new NewRoom(this);
+            Application.Run(newroom);
 
+        }
+
+        public void initNewRoom()
+        {
+            var createRoomForm = new Thread(showNewRoomForm);
+            createRoomForm.Start();
+        }
 
 
 

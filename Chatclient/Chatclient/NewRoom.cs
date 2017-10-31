@@ -11,24 +11,27 @@ using System.Windows.Forms;
 
 namespace Chatclient
 {
-    public partial class Lobby : Form
+    public partial class NewRoom : Form
     {
         Controller controller;
-
-        public Lobby(Controller con)
+        string roomname;
+    
+        public NewRoom(Controller con)
         {
             controller = con;
             InitializeComponent();
         }
 
-        private void Lobby_Load(object sender, EventArgs e)
+        private void cancelBtn_Click(object sender, EventArgs e)
         {
+            this.Close();
+            Thread.CurrentThread.Abort();
 
         }
 
-        private void createBtn_Click(object sender, EventArgs e)
+        private void okBtn_Click(object sender, EventArgs e)
         {
-            controller.initNewRoom();         
+            roomname = RoomNameTextBox.Text;
         }
     }
 }
