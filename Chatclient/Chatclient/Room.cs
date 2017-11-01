@@ -17,6 +17,9 @@ namespace Chatclient
             InitializeComponent();
         }
 
-      
+        private void Room_Load(object sender, EventArgs e)
+        {
+
+        }
     }
 }

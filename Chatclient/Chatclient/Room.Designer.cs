@@ -198,6 +198,7 @@
             this.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.Name = "Room";
             this.Text = "Room";
+            this.Load += new System.EventHandler(this.Room_Load);
             this.ResumeLayout(false);
             this.PerformLayout();
 
