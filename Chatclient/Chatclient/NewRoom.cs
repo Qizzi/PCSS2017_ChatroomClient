@@ -32,6 +32,16 @@ namespace Chatclient
         private void okBtn_Click(object sender, EventArgs e)
         {
             roomname = RoomNameTextBox.Text;
+
+            if (controller.getConStatus())
+            {
+                controller.sendData(roomname);
+            }
+        }
+
+        private void NewRoom_Load(object sender, EventArgs e)
+        {
+
         }
     }
 }

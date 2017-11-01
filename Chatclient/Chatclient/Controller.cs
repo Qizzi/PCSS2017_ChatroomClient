@@ -17,6 +17,7 @@ namespace Chatclient
 
         private StreamReader sReader;
         private StreamWriter sWriter;
+        private String sData;
 
         private Boolean isConnected;
 
@@ -26,31 +27,12 @@ namespace Chatclient
 
         public Controller()
         {
-            var loginScreen = new Thread(loginInit);
+            client = new TcpClient();
+            var loginScreen = new Thread(initConnect);
             loginScreen.Start();
         }
 
-        /*public void createLobThread()
-        {
-            client = new TcpClient();
-            client.Connect("localhost", 5555);
-
-            sWriter = new StreamWriter(client.GetStream(), Encoding.ASCII);
-            isConnected = true;
-            String sData = null;
-
-            while (isConnected)
-            {
-                sData = form.getUserName();
-                sWriter.WriteLine(sData);
-                sWriter.Flush();
-            }
-
-            var lobbyThread = new Thread(showLobby);
-            lobbyThread.Start();
-        }*/
-
-        private void loginInit()
+        private void initConnect()
         {
             form = new connectWin(this);
             Application.Run(form);
@@ -75,23 +57,37 @@ namespace Chatclient
             createRoomForm.Start();
         }
 
-        public void login()
+        public void connect()
         {
-            client = new TcpClient();
             client.Connect("localhost", 5555);
-
             sWriter = new StreamWriter(client.GetStream(), Encoding.ASCII);
+            sReader = new StreamReader(client.GetStream(), Encoding.ASCII);
             isConnected = true;
             String sData = null;
 
             if (isConnected)
             {
                 sData = form.getUserName();
-                sWriter.WriteLine(sData);
-                sWriter.Flush();
+                sendData(sData);
                 var lobbyThread = new Thread(showLobby);
                 lobbyThread.Start();
             }
+        }
+
+        public void sendData(string data)
+        {
+            sWriter.WriteLine(data);
+            sWriter.Flush();
+        }
+
+       public Boolean getConStatus()
+        {
+            return isConnected;
+        }
+
+        public void setSdata(string data)
+        {
+            sData = data;
         }
     }
     
