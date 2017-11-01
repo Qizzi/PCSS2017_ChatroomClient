@@ -60,10 +60,6 @@ namespace Chatclient
             Application.Run(lobby);
         }
 
-
-
-
-
         public void login()
         {
             client = new TcpClient();
