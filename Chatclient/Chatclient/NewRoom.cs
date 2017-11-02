@@ -35,7 +35,9 @@ namespace Chatclient
 
             if (controller.getConStatus())
             {
+                controller.sendData("createRoom");
                 controller.sendData(roomname);
+                this.Close();
             }
         }
 
