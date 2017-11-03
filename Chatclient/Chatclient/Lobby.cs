@@ -30,5 +30,26 @@ namespace Chatclient
         {
             controller.initNewRoom();         
         }
+
+        private void serverList_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            
+        }
+
+        public void addListElement(string n)
+        {
+            if (InvokeRequired)
+            {
+                this.Invoke(new Action<string>(addListElement), new object[] { n });
+                return;
+            }
+
+            serverList.Items.Add(n);
+        }
+
+        private void joinBtn_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }
