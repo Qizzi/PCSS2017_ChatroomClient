@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Threading;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
@@ -18,6 +19,8 @@ namespace Chatclient
             Application.SetCompatibleTextRenderingDefault(false);
 
             Controller controller = new Controller();
+            var listen = new Thread(controller.listenForData);
+            listen.Start();
         }
     }
 }

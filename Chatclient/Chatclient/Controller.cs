@@ -74,8 +74,6 @@ namespace Chatclient
                 var lobbyThread = new Thread(showLobby);
                 lobbyThread.Start();
                 UID = Int32.Parse(sReader.ReadLine());
-                dataReceived = sReader.ReadLine();
-                lobby.addListElement(dataReceived);
             }
         }
 
@@ -93,6 +91,15 @@ namespace Chatclient
         public void setSdata(string data)
         {
             sData = data;
+        }
+
+        public void listenForData()
+        {
+            while (isConnected)
+            {
+                dataReceived = sReader.ReadLine();
+                lobby.addListElement(dataReceived);
+            }
         }
     }
     

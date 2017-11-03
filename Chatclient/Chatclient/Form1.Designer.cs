@@ -36,29 +36,28 @@
             // 
             // nameBox
             // 
-            this.nameBox.Location = new System.Drawing.Point(9, 40);
-            this.nameBox.Margin = new System.Windows.Forms.Padding(2, 1, 2, 1);
+            this.nameBox.Location = new System.Drawing.Point(14, 62);
+            this.nameBox.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.nameBox.Name = "nameBox";
-            this.nameBox.Size = new System.Drawing.Size(188, 20);
+            this.nameBox.Size = new System.Drawing.Size(280, 26);
             this.nameBox.TabIndex = 0;
             this.nameBox.TextChanged += new System.EventHandler(this.textBox1_TextChanged);
             // 
             // instructTxt
             // 
             this.instructTxt.AutoSize = true;
-            this.instructTxt.Location = new System.Drawing.Point(44, 17);
-            this.instructTxt.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.instructTxt.Location = new System.Drawing.Point(66, 26);
             this.instructTxt.Name = "instructTxt";
-            this.instructTxt.Size = new System.Drawing.Size(118, 13);
+            this.instructTxt.Size = new System.Drawing.Size(178, 20);
             this.instructTxt.TabIndex = 1;
             this.instructTxt.Text = "Please Enter Username";
             // 
             // connectBtn
             // 
-            this.connectBtn.Location = new System.Drawing.Point(71, 71);
-            this.connectBtn.Margin = new System.Windows.Forms.Padding(2, 1, 2, 1);
+            this.connectBtn.Location = new System.Drawing.Point(106, 109);
+            this.connectBtn.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.connectBtn.Name = "connectBtn";
-            this.connectBtn.Size = new System.Drawing.Size(66, 25);
+            this.connectBtn.Size = new System.Drawing.Size(99, 38);
             this.connectBtn.TabIndex = 2;
             this.connectBtn.Text = "Connect";
             this.connectBtn.UseVisualStyleBackColor = true;
@@ -66,14 +65,14 @@
             // 
             // connectWin
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(211, 108);
+            this.ClientSize = new System.Drawing.Size(316, 166);
             this.Controls.Add(this.connectBtn);
             this.Controls.Add(this.instructTxt);
             this.Controls.Add(this.nameBox);
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
-            this.Margin = new System.Windows.Forms.Padding(2, 1, 2, 1);
+            this.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.Name = "connectWin";
             this.Text = "Big Cock Chat";
             this.Load += new System.EventHandler(this.Form1_Load);
