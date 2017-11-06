@@ -29,7 +29,7 @@ namespace Chatclient
 
         private void createBtn_Click(object sender, EventArgs e)
         {
-            controller.initNewRoom();         
+            controller.sendData("createRoom");
         }
 
         private void serverList_SelectedIndexChanged(object sender, EventArgs e)
