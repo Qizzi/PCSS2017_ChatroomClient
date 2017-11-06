@@ -14,20 +14,16 @@ namespace Chatclient
     {
 
         private TcpClient client;
-
         private StreamReader sReader;
         private StreamWriter sWriter;
         private String sData;
-
         private Boolean isConnected;
-
         private connectWin form;
         private Lobby lobby;
         private Room roomForm;
         private int UID;
         private string dataReceived;
         private string msgReceived;
-
         public Controller()
         {
             client = new TcpClient();

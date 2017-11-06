@@ -35,7 +35,6 @@ namespace Chatclient
         private void sendBtn_Click(object sender, EventArgs e)
         {
             controller.sendData("handleMessage");
-           // controller.sendData(msg);
         }
 
         public void listen(string n)

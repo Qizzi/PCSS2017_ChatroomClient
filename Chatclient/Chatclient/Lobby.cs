@@ -26,7 +26,6 @@ namespace Chatclient
         {
 
         }
-
         private void createBtn_Click(object sender, EventArgs e)
         {
             controller.sendData("createRoom");
@@ -47,7 +46,6 @@ namespace Chatclient
 
             serverList.Items.Add(n);
         }
-
         private void joinBtn_Click(object sender, EventArgs e)
         {
             controller.sendData("joinRoom");
