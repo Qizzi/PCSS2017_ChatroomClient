@@ -12,8 +12,11 @@ namespace Chatclient
 {
     public partial class Room : Form
     {
-        public Room()
+        Controller controller;
+
+        public Room(Controller con)
         {
+            controller = con;
             InitializeComponent();
         }
 
@@ -22,6 +25,9 @@ namespace Chatclient
 
         }
 
-        
+        private void msgBox_TextChanged(object sender, EventArgs e)
+        {
+
+        }
     }
 }

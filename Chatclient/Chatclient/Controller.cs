@@ -24,6 +24,7 @@ namespace Chatclient
         private connectWin form;
         private Lobby lobby;
         private NewRoom newroom;
+        private Room roomForm;
         private int UID;
         private string dataReceived;
 
@@ -57,6 +58,19 @@ namespace Chatclient
         {
             var createRoomForm = new Thread(showNewRoomForm);
             createRoomForm.Start();
+        }
+
+        public void showRoomForm()
+        {
+            roomForm = new Room(this);
+            Application.Run(roomForm);
+        }
+
+        public void initRoom()
+        {
+            var roomForm = new Thread(showRoomForm);
+            roomForm.Start();
+               
         }
 
         public void connect()
@@ -103,6 +117,11 @@ namespace Chatclient
                 lobby.addListElement(dataReceived);
                 Console.WriteLine(sData);
             }
+        }
+
+        public int getUID()
+        {
+            return UID;
         }
     }
     

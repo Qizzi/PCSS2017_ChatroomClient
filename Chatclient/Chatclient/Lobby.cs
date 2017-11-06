@@ -14,6 +14,7 @@ namespace Chatclient
     public partial class Lobby : Form
     {
         Controller controller;
+        string highlight = "";
 
         public Lobby(Controller con)
         {
@@ -33,7 +34,7 @@ namespace Chatclient
 
         private void serverList_SelectedIndexChanged(object sender, EventArgs e)
         {
-            
+            highlight = serverList.SelectedIndex.ToString();
         }
 
         public void addListElement(string n)
@@ -49,7 +50,10 @@ namespace Chatclient
 
         private void joinBtn_Click(object sender, EventArgs e)
         {
-
+            controller.sendData("joinRoom");
+            controller.sendData(controller.getUID().ToString());
+            controller.sendData(highlight);
+            controller.initRoom();
         }
     }
 }
