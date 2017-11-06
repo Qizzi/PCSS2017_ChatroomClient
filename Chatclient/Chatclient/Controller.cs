@@ -26,6 +26,7 @@ namespace Chatclient
         private Room roomForm;
         private int UID;
         private string dataReceived;
+        private string msgReceived;
 
         public Controller()
         {
@@ -100,8 +101,25 @@ namespace Chatclient
             while (isConnected)
             {
                 dataReceived = sReader.ReadLine();
-                lobby.addListElement(dataReceived);
+                if (dataReceived.Contains("Room"))
+                {
+                    lobby.addListElement(dataReceived);
+                } else
+                {
+                    roomForm.listen(dataReceived);
+                }
+                
                 Console.WriteLine(sData);
+            }
+
+        }
+
+        public void receiveMsg()
+        {
+            while(isConnected)
+            {
+                msgReceived = sReader.ReadLine();
+                roomForm.listen(msgReceived);
             }
         }
 
