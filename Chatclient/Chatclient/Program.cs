@@ -19,8 +19,6 @@ namespace Chatclient
             Application.SetCompatibleTextRenderingDefault(false);
 
             Controller controller = new Controller();
-            var listen = new Thread(controller.listenForData);
-            listen.Start();
         }
     }
 }
